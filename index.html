@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+	<!-- CODIFICACION -->
+	<meta charset="UTF-8">
+	<!-- RESPONSIVE MOVIL -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- TÍTULO -->
+	<title> Triqui JC </title>
+	<!-- ESTILOS -->
+	<link rel="stylesheet" href="estilos.css">
+	<!-- FUENTE -->
+	<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+ 
+<body>
+	<div class="contenedor">
+ 
+		<h1> Triqui </h1>
+ 
+		<!-- FORMULARIO NOMBRE -->
+		<div class="cuadro-fijo">
+			<label for="nombreJugador"><strong>Nombre Completo:</strong></label><br>
+			<input type="text" id="nombreJugador" placeholder="Ingresa tu nombre completo" maxlength="100">
+			<p id="mensajeNombre" class="mensaje-error"></p>
+		</div>
+ 
+		<hr/>
+ 
+		<!-- TABLERO TRIQUI -->
+		<h2> Tablero </h2>
+		<div id="estadoJuego" class="estado-juego">Ingresa tu nombre y presiona una casilla para comenzar</div>
+ 
+		<div class="tablero" id="tablero">
+			<div class="celda" data-index="0"></div>
+			<div class="celda" data-index="1"></div>
+			<div class="celda" data-index="2"></div>
+			<div class="celda" data-index="3"></div>
+			<div class="celda" data-index="4"></div>
+			<div class="celda" data-index="5"></div>
+			<div class="celda" data-index="6"></div>
+			<div class="celda" data-index="7"></div>
+			<div class="celda" data-index="8"></div>
+		</div>
+ 
+		<hr/>
+ 
+		<!-- CRONÓMETRO -->
+		<h2> Cronómetro </h2>
+		<div class="cuadro-fijo cronometro-box">
+			<div class="clock-ring">
+				<span class="clock-time" id="cronometro">00:00</span>
+			</div>
+		</div>
+ 
+		<hr/>
+ 
+		<!-- BOTONES -->
+		<div class="botones">
+			<button id="btnReintentar" onclick="reiniciarJuego()"> 🔄 Reintentar </button>
+		</div>
+ 
+		<!-- MARCADOR -->
+		<div class="cuadro-fijo marcador-box">
+			<strong>Marcador de Sesión</strong><br>
+			Victorias: <span id="victorias">0</span>
+			Derrotas: <span id="derrotas">0</span>
+			Empates: <span id="empates">0</span>
+		</div>
+ 
+		<hr/>
+ 
+		<p id="mensajeGuardado" class="mensaje-guardado"></p>
+ 
+	</div>
+ 
+	<script src="script.js"></script>
+</body>
+</html>

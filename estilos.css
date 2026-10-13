@@ -1,0 +1,277 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+/* ===== BODY ===== */
+body {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  color: #00e5cc;
+  padding: 20px;
+}
+ 
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.contenedor {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 16px;
+  border: 1px solid #00e5cc44;
+  border-radius: 12px;
+  box-shadow:
+    0 0 30px #00e5cc22,
+    0 0 60px #00e5cc11;
+}
+ 
+/* ===== TÍTULOS ===== */
+h1 {
+  font-size: 2.2rem;
+  color: #00e5cc;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 10px #00e5cc,
+    0 0 25px #00e5cc88;
+  text-align: center;
+}
+ 
+h2 {
+  font-size: 1rem;
+  color: #00e5cc99;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+}
+ 
+/* ===== CUADRO FIJO ===== */
+.cuadro-fijo {
+  width: 100%;
+  border: 1px solid #00e5cc55;
+  border-radius: 8px;
+  padding: 16px 20px;
+  background: #00e5cc08;
+  box-shadow: 0 0 12px #00e5cc22;
+  text-align: left;
+}
+ 
+/* ===== INPUT NOMBRE ===== */
+input[type="text"] {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: #000;
+  border: 1px solid #00e5cc66;
+  border-radius: 6px;
+  color: #00e5cc;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+ 
+input[type="text"]:focus {
+  border-color: #00e5cc;
+  box-shadow: 0 0 10px #00e5cc55;
+}
+ 
+input[type="text"]::placeholder {
+  color: #00e5cc44;
+}
+ 
+/* ===== MENSAJE ERROR ===== */
+.mensaje-error {
+  color: #ff4466;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  min-height: 16px;
+  text-shadow: 0 0 8px #ff446688;
+}
+ 
+/* ===== ESTADO DEL JUEGO ===== */
+.estado-juego {
+  font-size: 0.9rem;
+  color: #00e5ccbb;
+  text-align: center;
+  letter-spacing: 1px;
+  min-height: 20px;
+  text-shadow: 0 0 8px #00e5cc55;
+  padding: 0 8px;
+}
+ 
+/* ===== TABLERO TRIQUI ===== */
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+ 
+.celda {
+  aspect-ratio: 1;
+  border: 1px solid #00e5cc55;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  cursor: pointer;
+  background: #00e5cc08;
+  transition: background 0.2s, box-shadow 0.2s;
+  user-select: none;
+  color: #00e5cc;
+  text-shadow:
+    0 0 10px #00e5cc,
+    0 0 20px #00e5cc88;
+}
+ 
+.celda:hover:not(.ocupada) {
+  background: #00e5cc15;
+  box-shadow: 0 0 14px #00e5cc44;
+}
+ 
+.celda.ocupada {
+  cursor: not-allowed;
+}
+ 
+.celda.ganadora {
+  background: #00e5cc25;
+  box-shadow: 0 0 20px #00e5ccaa;
+  border-color: #00e5cc;
+}
+ 
+.celda.maquina {
+  color: #ff4466;
+  text-shadow:
+    0 0 10px #ff4466,
+    0 0 20px #ff446688;
+}
+ 
+/* ===== CRONÓMETRO ===== */
+.cronometro-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.clock-ring {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #00e5cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 20px #00e5cc55,
+    0 0 40px #00e5cc22,
+    inset 0 0 20px #00e5cc22;
+}
+ 
+.clock-time {
+  font-size: 2.2rem;
+  color: #00e5cc;
+  letter-spacing: 4px;
+  text-shadow:
+    0 0 10px #00e5cc,
+    0 0 20px #00e5cc88,
+    0 0 40px #00e5cc44;
+  user-select: none;
+}
+ 
+/* ===== BOTONES ===== */
+.botones {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+ 
+button {
+  padding: 10px 28px;
+  background: transparent;
+  border: 1px solid #00e5cc;
+  border-radius: 6px;
+  color: #00e5cc;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+ 
+button:hover {
+  background: #00e5cc15;
+  box-shadow: 0 0 16px #00e5cc55;
+}
+ 
+/* ===== MARCADOR ===== */
+.marcador-box {
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+ 
+/* ===== MENSAJE GUARDADO ===== */
+.mensaje-guardado {
+  color: #00e5cc;
+  font-size: 0.85rem;
+  text-align: center;
+  letter-spacing: 1px;
+  min-height: 18px;
+  text-shadow: 0 0 8px #00e5cc88;
+}
+ 
+/* ===== HR ===== */
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #00e5cc33;
+}
+ 
+/* ===== RESPONSIVE MÓVIL ===== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+    letter-spacing: 4px;
+  }
+ 
+  .clock-ring {
+    width: 160px;
+    height: 160px;
+  }
+ 
+  .clock-time {
+    font-size: 1.7rem;
+  }
+ 
+  .celda {
+    font-size: 1.8rem;
+  }
+ 
+  .tablero {
+    max-width: 260px;
+  }
+ 
+  .contenedor {
+    padding: 16px 10px;
+    gap: 14px;
+  }
+ 
+  button {
+    padding: 9px 18px;
+    font-size: 0.85rem;
+  }
+}
